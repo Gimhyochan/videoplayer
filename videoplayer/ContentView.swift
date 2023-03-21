@@ -22,15 +22,11 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List(events) { 
-                event in Button(
-                    action: {
-                        self.selectedEvent = event
-                    }
-                ) {
-                    Text(event.name)
-                }
-            }
+            List(events) { event in
+                            NavigationLink(destination: VideoPlayerView(url: URL(string: event.url)!)) {
+                                Text(event.name)
+                            }
+                        }
             .navigationBarTitle("라이브 경기")
             .navigationBarItems(
                 trailing: Button(
@@ -51,15 +47,12 @@ struct ContentView: View {
                     }
                 )
             }
-            .sheet(item: $selectedEvent) { event in
-                if let url = URL(string: event.url) {
-                    VideoPlayerView(url: url)
-                }
-            }
         }
     }
     
     func fetchData() {
+        //clear lists
+        self.events = []
         guard let url = URL(string: "https://www.spotvnow.co.kr/api/v2/home/web") else { return }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
@@ -78,6 +71,7 @@ struct ContentView: View {
                 //print("json: \(json)")
                 guard let tupleArray = json as? [Any] else {
                     print("Failed to parse JSON data")
+                    self.showAlert = true
                     return
                 }
                 for (index, element) in tupleArray.enumerated() {
@@ -87,9 +81,10 @@ struct ContentView: View {
                     }
                     //print("dictionary \(index + 1): \(dictionary)")
                     if dictionary["mainCategoryId"] as! Int != 22{
-                        print("not 22")
+                        //print("not 22")
                         continue
                     }
+                    print("dictionary \(index + 1): \(dictionary)")
                     guard let dataArray = dictionary["data"] as? [String: Any],
                           let listArray = dataArray["list"] as? [[String: Any]] else {
                         print("Failed to parse JSON data")

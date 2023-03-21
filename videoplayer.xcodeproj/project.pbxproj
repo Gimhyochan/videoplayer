@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3020788F29C974C6003524A8 /* AppIcons in Resources */ = {isa = PBXBuildFile; fileRef = 3020788E29C974C6003524A8 /* AppIcons */; };
 		3085193829C829C200D18DDB /* videoplayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3085193729C829C200D18DDB /* videoplayerApp.swift */; };
 		3085193A29C829C200D18DDB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3085193929C829C200D18DDB /* ContentView.swift */; };
 		3085193C29C829C300D18DDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3085193B29C829C300D18DDB /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3020788E29C974C6003524A8 /* AppIcons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcons; sourceTree = "<group>"; };
 		3085193429C829C200D18DDB /* videoplayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = videoplayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3085193729C829C200D18DDB /* videoplayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoplayerApp.swift; sourceTree = "<group>"; };
 		3085193929C829C200D18DDB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 		3085192B29C829C200D18DDB = {
 			isa = PBXGroup;
 			children = (
+				3020788E29C974C6003524A8 /* AppIcons */,
 				3085193629C829C200D18DDB /* videoplayer */,
 				3085194729C829C300D18DDB /* videoplayerTests */,
 				3085195129C829C300D18DDB /* videoplayerUITests */,
@@ -231,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3020788F29C974C6003524A8 /* AppIcons in Resources */,
 				3085193F29C829C300D18DDB /* Preview Assets.xcassets in Resources */,
 				3085193C29C829C300D18DDB /* Assets.xcassets in Resources */,
 			);
@@ -327,7 +331,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
+				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -348,7 +352,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -387,12 +391,13 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
+				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = z;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -402,6 +407,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
